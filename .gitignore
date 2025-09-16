@@ -137,3 +137,40 @@ dist
 # Vite logs files
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
+
+
+
+# Ignore Visual Studio files
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Ignore build results
+[Bb]in/
+[Oo]bj/
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+*.exe
+*.dll
+*.pdb
+*.cache
+
+# ASP.NET Core specific
+server/wwwroot/lib/
+server/logs/
+
+# Ignore Node modules and Angular build
+client/node_modules/
+client/dist/
+client/.angular/cache/
+
+# VS Code settings
+.vscode/
+
+# OS files
+Thumbs.db
+.DS_Store
