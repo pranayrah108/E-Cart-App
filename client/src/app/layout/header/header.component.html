@@ -1,0 +1,100 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+
+    <img src="assets/logo.jpg" alt="logo" class="img-fluid w-5" />
+
+
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Navbar content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <!-- Search box in the middle -->
+      <form class="d-flex flex-grow-1 mx-3" role="search">
+        <input
+          class="form-control me-2 w-100"
+          type="search"
+          placeholder="Search"
+          aria-label="Search"
+        />
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+
+      <!-- Icons on the right -->
+      <div class="d-flex ms-3">
+        <mat-icon class="me-2">favorite</mat-icon>
+        <mat-icon>shopping_bag</mat-icon>
+      </div>
+    </div>
+  </div>
+</nav>
+<div class="row">
+  <div class="col-8">
+    <nav class="navbar navbar-expand-lg">
+      <button
+        matIconButton
+        [matMenuTriggerFor]="menu"
+        aria-label="Example icon-button with a menu"
+        class="d-flex"
+      >
+        <mat-icon>grid_view</mat-icon>
+        <h3>Categories</h3>
+      </button>
+      <mat-menu #menu="matMenu">
+        @for( cat of categories; track $index){
+        <button mat-menu-item>
+          <span>{{ cat }}</span>
+        </button>
+        }
+      </mat-menu>
+      <div class="container-fluid">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                routerLink="/"
+                routerLinkActive="router-link-active"
+                >Home</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                routerLink="/product"
+                routerLinkActive="router-link-active"
+                >Products</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                routerLink="/about"
+                routerLinkActive="router-link-active"
+                >About</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                routerLink="/help"
+                routerLinkActive="router-link-active"
+                >Help</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+</div>
