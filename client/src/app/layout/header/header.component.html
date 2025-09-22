@@ -41,13 +41,13 @@
   <div class="col-8">
     <nav class="navbar navbar-expand-lg">
       <button
-        matIconButton
+        mat-icon-button
         [matMenuTriggerFor]="menu"
         aria-label="Example icon-button with a menu"
-        class="d-flex"
+        class="d-flex align-items-center justify-content-center gap-2 btn btn-light rounded"
       >
         <mat-icon>grid_view</mat-icon>
-        <h3>Categories</h3>
+        <span class="m-0 fw-bold">Categories</span>
       </button>
       <mat-menu #menu="matMenu">
         @for( cat of categories; track $index){
