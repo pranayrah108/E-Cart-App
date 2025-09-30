@@ -1,14 +1,15 @@
 ﻿using server.Data;
 using server.Entities;
 using Microsoft.EntityFrameworkCore;
+using server.Interface.Repository;
 
 namespace server.Repository
 {
     public class UserRepository : IUserRepository
     {
-        private readonly AuthContex contex;
+        private readonly DataContex contex;
 
-        public UserRepository(AuthContex contex)
+        public UserRepository(DataContex contex)
         {
             this.contex = contex;
         }

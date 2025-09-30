@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using server.Dto;
 using server.Entities;
 using server.Helper;
-using server.Repository;
+using server.Interface.Repository;
 
 namespace server.Controllers
 {
@@ -62,7 +62,7 @@ namespace server.Controllers
             if (user != null)
             {
                 res.IsSuccessed = false;
-                res.Message=$"User with email {req.Email} alredy exists";
+                res.Message = $"User with email {req.Email} alredy exists";
                 return BadRequest(res);
             }
 

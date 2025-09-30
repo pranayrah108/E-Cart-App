@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using server.Dto;
-using server.Repository;
+using server.Interface.Repository;
 
 namespace server.Controllers
 {

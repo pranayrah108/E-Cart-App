@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using server.Data;
 using server.Helper;
+using server.Interface.Repository;
 using server.Repository;
 using System.Text;
 
@@ -11,7 +12,7 @@ var builder = WebApplication.CreateBuilder(args);
 IConfiguration configuration = builder.Configuration;
 
 // 1️⃣ Configure SQL Server DbContext
-builder.Services.AddDbContext<AuthContex>(options =>
+builder.Services.AddDbContext<DataContex>(options =>
     options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
 
 // 2️⃣ Add controllers and Swagger
@@ -43,6 +44,7 @@ builder.Services.AddAuthentication(options =>
 // 4️⃣ Add DI for repositories and helpers
 builder.Services.AddScoped<IJwtHelper, JwtHelper>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<IProductRepository, ProductRepository>();
 
 var app = builder.Build();
 

@@ -10,7 +10,7 @@ using server.Data;
 
 namespace server.Migrations
 {
-    [DbContext(typeof(AuthContex))]
+    [DbContext(typeof(DataContex))]
     [Migration("20250924164008_UserManagementTable")]
     partial class UserManagementTable
     {
